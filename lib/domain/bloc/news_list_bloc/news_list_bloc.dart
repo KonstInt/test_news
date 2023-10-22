@@ -15,24 +15,28 @@ class NewsListBloc extends Bloc<NewsListEvent, NewsListState> {
 
   NewsListBloc({required this.repository}) : super(NewsInitial()) {
     on<NewsListLoadEvent>(_onNewsListLoadEvent);
-    
+
     on<NewsListRefreshEvent>(_onNewsListRefreshEvent);
   }
 
-  FutureOr<void> _onNewsListLoadEvent(NewsListLoadEvent event, Emitter<NewsListState> emit) async {
+  FutureOr<void> _onNewsListLoadEvent(
+      NewsListLoadEvent event, Emitter<NewsListState> emit) async {
     emit(NewsListLoadingState());
-    try{
-    final tmpList = await repository.getNewsPosts(event.lastId, event.pageSize);
-    newsList.addAll(tmpList);
-    
-    tmpList.isEmpty ? emit(NewsListEmptyState(newsList)): emit(NewsListLoadedState(newsList));
-    }
-    catch(e){
+    try {
+      final tmpList =
+          await repository.getNewsPosts(event.lastId, event.pageSize);
+      newsList.addAll(tmpList);
+
+      tmpList.isEmpty
+          ? emit(NewsListEmptyState(newsList))
+          : emit(NewsListLoadedState(newsList));
+    } catch (e) {
       emit(NewsListErrorState());
     }
   }
 
-  FutureOr<void> _onNewsListRefreshEvent(NewsListRefreshEvent event, Emitter<NewsListState> emit) {
+  FutureOr<void> _onNewsListRefreshEvent(
+      NewsListRefreshEvent event, Emitter<NewsListState> emit) {
     newsList = [];
     _onNewsListLoadEvent(NewsListLoadEvent(pageSize: event.pageSize), emit);
   }

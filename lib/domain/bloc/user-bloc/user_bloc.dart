@@ -35,7 +35,7 @@ class UserBloc extends Bloc<UserEvent, UserState> {
     emit(UserLoadingState());
     try {
       List<String> newsIds = [];
-      for(NewsPostModel news in event.readNews){
+      for (NewsPostModel news in event.readNews) {
         newsIds.add(news.id);
       }
       repository.updateUser(readNews: newsIds);

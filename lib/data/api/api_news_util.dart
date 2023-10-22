@@ -3,6 +3,7 @@ import 'package:test_news/data/api/models/api_news_post_model.dart';
 import 'package:test_news/data/api/service/news_service.dart';
 import 'package:test_news/data/mapper/news_post_mapper.dart';
 import 'package:test_news/domain/models/news_post_model.dart';
+
 @singleton
 class ApiNewsUtil {
   NewsService newsListService;

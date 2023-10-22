@@ -13,6 +13,7 @@ class TopNewsLoadedState extends TopNewsState {
 }
 
 class TopNewsErrorState extends TopNewsState {}
+
 class TopNewsEmptyState extends TopNewsState {
   final List<NewsPostModel> newsList;
   TopNewsEmptyState(this.newsList);

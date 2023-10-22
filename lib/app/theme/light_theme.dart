@@ -24,7 +24,7 @@ ThemeData lightThemeData(BuildContext context) {
     primaryColor: _MyColorsLight.kColorBlue,
     textTheme: TextTheme(
       titleLarge: GoogleFonts.roboto(
-        textStyle: TextStyle(
+        textStyle: const TextStyle(
           color: _MyColorsLight.kLabelPrimary,
           fontWeight: FontWeight.w600,
           fontSize: 30,
@@ -32,7 +32,7 @@ ThemeData lightThemeData(BuildContext context) {
         ),
       ),
       titleMedium: GoogleFonts.roboto(
-        textStyle: TextStyle(
+        textStyle: const TextStyle(
           color: _MyColorsLight.kLabelPrimary,
           fontWeight: FontWeight.w600,
           fontSize: 20,
@@ -40,7 +40,7 @@ ThemeData lightThemeData(BuildContext context) {
         ),
       ),
       bodyMedium: GoogleFonts.roboto(
-        textStyle: TextStyle(
+        textStyle: const TextStyle(
           color: _MyColorsLight.kLabelPrimary,
           fontWeight: FontWeight.w400,
           fontSize: 16,
@@ -48,7 +48,7 @@ ThemeData lightThemeData(BuildContext context) {
         ),
       ),
       bodySmall: GoogleFonts.roboto(
-        textStyle: TextStyle(
+        textStyle: const TextStyle(
           color: _MyColorsLight.kLabelPrimary,
           fontWeight: FontWeight.w400,
           fontSize: 14,
@@ -56,7 +56,7 @@ ThemeData lightThemeData(BuildContext context) {
         ),
       ),
       labelLarge: GoogleFonts.roboto(
-        textStyle: TextStyle(
+        textStyle: const TextStyle(
           color: _MyColorsLight.kLabelPrimary,
           fontWeight: FontWeight.w500,
           fontSize: 14,
@@ -70,9 +70,6 @@ ThemeData lightThemeData(BuildContext context) {
     ),
     iconTheme: const IconThemeData(color: _MyColorsLight.kLabelTertiary),
     dividerTheme: const DividerThemeData(color: _MyColorsLight.kSeparatorColor),
-    
-   
-   
   );
 }
 

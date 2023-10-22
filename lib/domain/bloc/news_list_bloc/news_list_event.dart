@@ -9,9 +9,7 @@ class NewsListLoadEvent extends NewsListEvent {
   NewsListLoadEvent({this.lastId, required this.pageSize});
 }
 
-
 class NewsListRefreshEvent extends NewsListEvent {
   final int pageSize;
   NewsListRefreshEvent({required this.pageSize});
 }
-

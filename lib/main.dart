@@ -7,4 +7,3 @@ void main() {
   configureDependencies();
   runApp(const App());
 }
-

@@ -9,8 +9,9 @@ class UserService {
   }
 
   Future<ApiUserModel> updateUser(List<String> readNews) async {
-     _user.readNews.addAll(readNews);
+    _user.readNews.addAll(readNews);
     return loadUser();
   }
+
   final ApiUserModel _user = ApiUserModel(readNews: {'1'});
 }

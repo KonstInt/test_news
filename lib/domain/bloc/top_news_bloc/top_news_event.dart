@@ -6,6 +6,7 @@ sealed class TopNewsEvent {}
 class TopNewsRefreshEvent extends TopNewsEvent {
   TopNewsRefreshEvent();
 }
+
 class TopNewsLoadEvent extends TopNewsEvent {
   TopNewsLoadEvent();
 }

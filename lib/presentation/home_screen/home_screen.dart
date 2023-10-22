@@ -64,7 +64,7 @@ class HomeScreen extends StatelessWidget {
                                     UserUpdateReadNewsEvent(readNews: posts))
                                 : null,
                             child: Text(
-                               AppLocalizations.of(context)!.markAllRead,
+                              AppLocalizations.of(context)!.markAllRead,
                             ));
                       },
                     );

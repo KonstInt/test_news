@@ -8,6 +8,7 @@ import 'package:test_news/domain/repository/abstract_news_repository.dart';
 
 part 'top_news_event.dart';
 part 'top_news_state.dart';
+
 @injectable
 class TopNewsBloc extends Bloc<TopNewsEvent, TopNewsState> {
   final AbstractNewsRepository repository;
@@ -17,22 +18,20 @@ class TopNewsBloc extends Bloc<TopNewsEvent, TopNewsState> {
     on<TopNewsRefreshEvent>(_onTopNewsRefreshEvent);
   }
 
-
-  FutureOr<void> _onTopNewsLoadEvent(TopNewsLoadEvent event, Emitter<TopNewsState> emit) async {
+  FutureOr<void> _onTopNewsLoadEvent(
+      TopNewsLoadEvent event, Emitter<TopNewsState> emit) async {
     emit(TopNewsLoadingState());
-    try{
-    topNews = await repository.getTopNewsPosts();
-    emit(TopNewsLoadedState(topNews));
-    }
-    catch(e){
+    try {
+      topNews = await repository.getTopNewsPosts();
+      emit(TopNewsLoadedState(topNews));
+    } catch (e) {
       emit(TopNewsErrorState());
     }
   }
 
-  FutureOr<void> _onTopNewsRefreshEvent(TopNewsRefreshEvent event, Emitter<TopNewsState> emit) {
+  FutureOr<void> _onTopNewsRefreshEvent(
+      TopNewsRefreshEvent event, Emitter<TopNewsState> emit) {
     topNews = [];
     _onTopNewsLoadEvent(TopNewsLoadEvent(), emit);
   }
-
-
 }

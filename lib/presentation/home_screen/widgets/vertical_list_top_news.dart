@@ -15,12 +15,12 @@ class VerticalListTopNews extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      crossAxisAlignment: CrossAxisAlignment.start ,
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
           child: Text(
-             AppLocalizations.of(context)!.topNews,
+            AppLocalizations.of(context)!.topNews,
             style: Theme.of(context).textTheme.titleLarge,
           ),
         ),

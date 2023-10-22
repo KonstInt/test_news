@@ -5,8 +5,7 @@ import 'package:test_news/domain/models/news_post_model.dart';
 import 'package:test_news/domain/repository/abstract_news_repository.dart';
 
 @Singleton(as: AbstractNewsRepository)
-class MockNewsRepository extends AbstractNewsRepository{
-
+class MockNewsRepository extends AbstractNewsRepository {
   @override
   Future<List<NewsPostModel>> getNewsPosts(int? lastId, int pageSize) {
     return GetIt.I<ApiNewsUtil>().getNewsPosts(lastId, pageSize);
@@ -16,5 +15,4 @@ class MockNewsRepository extends AbstractNewsRepository{
   Future<List<NewsPostModel>> getTopNewsPosts() {
     return GetIt.I<ApiNewsUtil>().getTopNewsPosts();
   }
-
 }

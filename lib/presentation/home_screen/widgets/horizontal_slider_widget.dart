@@ -21,8 +21,7 @@ class HorizontalSliderWidget extends StatelessWidget {
             children: [
               if (listModel.isNotEmpty)
                 Padding(
-                  padding:
-                      const EdgeInsets.symmetric(vertical: 10),
+                  padding: const EdgeInsets.symmetric(vertical: 10),
                   child: Text(
                     AppLocalizations.of(context)!.allNews,
                     style: Theme.of(context).textTheme.titleLarge,

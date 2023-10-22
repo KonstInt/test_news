@@ -10,7 +10,7 @@ class MockUserRepository extends AbstractUserRepository {
   Future<UserModel> getUser() {
     return GetIt.I<ApiUserUtil>().getUser();
   }
-  
+
   @override
   Future<UserModel> updateUser({required List<String> readNews}) {
     return GetIt.I<ApiUserUtil>().updateUser(readNews);
